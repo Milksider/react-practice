@@ -174,6 +174,9 @@ html{
     margin-top: 45px;
     cursor: pointer;
   }
+  .form__btn:disabled{
+    background-color: #c1c3d4;
+  }
   .alt-actions{
     padding-top: 40px;
     display: flex;
@@ -194,9 +197,7 @@ html{
   .alt-actions__link + .alt-actions__link{
     margin-left: 23px;
   }
-  .hidden{
-    display: none;
-  }
-  .hidden{
-    display: none;
+  .error{
+    height: 40px;
+    color: red;
   }

@@ -1,6 +1,7 @@
 import RegisterForm from '../Forms/RegisterForm';
 
 function RegisterPage(){
+
     return(
         <section class="forms">
         <div class="container">
@@ -12,7 +13,7 @@ function RegisterPage(){
               </div>
     
                 <div className="switcher">
-                <RegisterForm/>
+                <RegisterForm />
                 </div>
                
             </div>
