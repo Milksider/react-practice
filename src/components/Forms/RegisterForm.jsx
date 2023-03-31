@@ -1,5 +1,8 @@
 import '../styles/style.css';
 import {useForm} from 'react-hook-form';
+import {Link} from 'react-router-dom';
+
+
 
 function RegisterForm() {
 
@@ -28,7 +31,7 @@ function RegisterForm() {
             </h2>
             <p className="form-wrapper__text">
               If you already have an account register
-              You can   <a className="form-wrapper__link">Login here !</a>
+              You can   <Link className="form-wrapper__link" to="/login">Login here !</Link>
             </p>
 
             <form onSubmit={handleSubmit(onSubmit)} 

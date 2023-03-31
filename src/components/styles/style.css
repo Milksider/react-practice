@@ -201,3 +201,25 @@ html{
     height: 40px;
     color: red;
   }
+
+  .header{
+    height: 70px;
+    margin: 20px 20px 13px 20px;
+    border-bottom: 1px solid #0C21C1;
+  }
+  .nav{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .nav__link{
+    margin-left: 15px;
+    background-color: #0C21C1;
+    color: white;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 26px;
+    padding: 7px;
+    border-radius: 32px;
+  }

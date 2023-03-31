@@ -1,6 +1,6 @@
 import '../styles/style.css';
 import {useForm} from 'react-hook-form';
-
+import {Link, Form, useSubmit} from 'react-router-dom';
 
 function LoginForm() {
 
@@ -28,11 +28,11 @@ function LoginForm() {
             </h2>
             <p className="form-wrapper__text">
               If you don’t have an account register
-              You can   <a className="form-wrapper__link">Register here !</a>
+              You can   <Link className="form-wrapper__link" to="/register">Register here !</Link>
             </p>
 
             <form onSubmit={handleSubmit(onSubmit)} 
-            action="#" className="form">
+            action="#" className="form" >
 
                 <div className='error'>{errors?.email && <p>{errors?.email?.message || 'Error'}</p>}</div>
                 <label htmlFor="#" className="form__label">
