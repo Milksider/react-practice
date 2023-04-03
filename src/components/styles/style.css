@@ -59,9 +59,11 @@ html{
   }
   .container{
     padding: 20px 126px;
+    width: 100%;
   }
   .forms-inner{
     display: flex;
+    justify-content: center;
   }
   .forms__content{
     width: 431px;
@@ -222,4 +224,22 @@ html{
     line-height: 26px;
     padding: 7px;
     border-radius: 32px;
+  }
+
+
+  @media(max-width: 1000px){
+    .container{
+      padding: 20px 30px;
+    }
+    .logo{
+      display: none;
+    }
+    .forms__decor{
+      width: 0;
+      display: none;
+    }
+    .forms__content{
+      margin-right: 0;
+    }
+    
   }

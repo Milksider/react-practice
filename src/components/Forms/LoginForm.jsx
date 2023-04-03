@@ -1,6 +1,7 @@
 import '../styles/style.css';
 import {useForm} from 'react-hook-form';
-import {Link, Form, useSubmit} from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 function LoginForm() {
 
@@ -16,8 +17,27 @@ function LoginForm() {
         mode: 'onBlur'
     });
 
-    const onSubmit = (data) => {
-        alert(JSON.stringify(data));
+    const onSubmit = async (data) => {
+        const formData = new FormData()
+        formData.append('email', data.email)
+        formData.append('password', data.pass)
+        const jsonData = JSON.stringify(Object.fromEntries(formData));
+
+        const res = await fetch("https://liq.purpleplane-it.com/api/auth/login", {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: jsonData
+        }).then(res => res.json())
+
+        if(res.statusCode){
+            console.log(res)
+            Swal.fire('Error', res.message, 'error', 'ok')
+        }else {
+            console.log(res.accessToken)
+            console.log(res.refreshToken)
+            localStorage.setItem('accessToken', res.accessToken)
+            localStorage.setItem('refreshToken', res.refreshToken)
+        }
         reset();
     };
 
@@ -44,8 +64,9 @@ function LoginForm() {
                             message: 'Wrong email format'
                         }
                     })}
-                    className="form__input form__input-email" type="email" name="email" id="" placeholder='Enter your email address'/>
+                    className="form__input form__input-email" type="email" name="email"  placeholder='Enter your email address'/>
                 </label>
+                
                 <div className='error'>{errors?.pass && <p>{errors?.pass?.message || 'Error'}</p>}</div>
                 <label htmlFor="#" className="form__label">
                     Password
@@ -58,11 +79,9 @@ function LoginForm() {
                         pattern: {
                             value: /^.*(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$/,
                             message: 'Password must contain A-Z and a-z and 0-9'
-
                         }
-
                     })} 
-                    className="form__input form__input-pass" type="password" name="pass" id="" placeholder='Enter your Password'/>
+                    className="form__input form__input-pass" type="password" name="pass"  placeholder='Enter your Password'/>
                     </label>
                 <button disabled={!isValid} className="form__btn" type="submit">Login</button>
             </form>
