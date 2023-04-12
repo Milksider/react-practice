@@ -2,6 +2,8 @@ import '../styles/style.css';
 import {useForm} from 'react-hook-form';
 import {Link} from 'react-router-dom';
 import Swal from 'sweetalert2'
+import ErrorMessage from '../Errors/InputError'
+import If from 'react'
 
 function LoginForm() {
 
@@ -54,7 +56,8 @@ function LoginForm() {
             <form onSubmit={handleSubmit(onSubmit)} 
             action="#" className="form" >
 
-                <div className='error'>{errors?.email && <p>{errors?.email?.message || 'Error'}</p>}</div>
+                
+                {errors?.email && <ErrorMessage field={errors.email?.message || 'Error'} />}
                 <label htmlFor="#" className="form__label">
                     Email
                     <input {...register('email', {
@@ -64,10 +67,11 @@ function LoginForm() {
                             message: 'Wrong email format'
                         }
                     })}
-                    className="form__input form__input-email" type="email" name="email"  placeholder='Enter your email address'/>
+                    className="form__input form__input-email" type="email" name="email"  placeholder='Enter your email address'
+                    autocomplete='email'/>
                 </label>
                 
-                <div className='error'>{errors?.pass && <p>{errors?.pass?.message || 'Error'}</p>}</div>
+                {errors?.pass && <ErrorMessage field={errors.pass?.message || 'Error'} />}
                 <label htmlFor="#" className="form__label">
                     Password
                     <input {...register('pass', {
@@ -81,7 +85,8 @@ function LoginForm() {
                             message: 'Password must contain A-Z and a-z and 0-9'
                         }
                     })} 
-                    className="form__input form__input-pass" type="password" name="pass"  placeholder='Enter your Password'/>
+                    className="form__input form__input-pass" type="password" name="pass"  placeholder='Enter your Password'
+                    autocomplete='current-password'/>
                     </label>
                 <button disabled={!isValid} className="form__btn" type="submit">Login</button>
             </form>

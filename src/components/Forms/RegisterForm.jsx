@@ -2,6 +2,7 @@ import '../styles/style.css';
 import {useForm} from 'react-hook-form';
 import {Link} from 'react-router-dom';
 import Swal from 'sweetalert2'
+import ErrorMessage from '../Errors/InputError'
 
 
 function RegisterForm() {
@@ -63,7 +64,8 @@ function RegisterForm() {
 
             <form onSubmit={handleSubmit(onSubmit)} 
             action="#" className="form">
-                <div className='error'>{errors?.email && <p>{errors?.email?.message || 'Error'}</p>}</div>
+
+                {errors?.email && <ErrorMessage field={errors.email?.message || 'Error'} />}
                 <label htmlFor="#" className="form__label">
                     Email
                     <input {...register('email', {
@@ -73,37 +75,41 @@ function RegisterForm() {
                             message: 'Wrong email format'
                         }
                     })}
-                    className="form__input form__input-email" type="email" name="email"  placeholder='Enter your email address'/>
+                    className="form__input form__input-email" type="email" name="email"  placeholder='Enter your email address'
+                    autocomplete='email'/>
                 </label>
 
-                <div className='error'>{errors?.firstName && <p>{errors?.firstName?.message || 'Error'}</p>}</div>
+                {errors?.firstName && <ErrorMessage field={errors.firstName?.message || 'Error'} />}
                 <label htmlFor="#" className="form__label">
                     Name
                     <input {...register('firstName', {
                         required: 'Connot be empty',
                     })}
-                        className="form__input" type="text" name="firstName"  placeholder='Enter your name'/>
+                        className="form__input" type="text" name="firstName"  placeholder='Enter your name'
+                        autocomplete='given-name'/>
                 </label>
 
-                <div className='error'>{errors?.lastName && <p>{errors?.lastName?.message || 'Error'}</p>}</div>
+                {errors?.lastName && <ErrorMessage field={errors.lastName?.message || 'Error'} />}
                 <label htmlFor="#" className="form__label">
                     Last name
                     <input {...register('lastName', {
                         required: 'Connot be empty',
                     })}
-                    className="form__input" type="text" name="lastName"  placeholder='Enter your last name'/>
+                    className="form__input" type="text" name="lastName"  placeholder='Enter your last name'
+                    autocomplete='family-name'/>
                 </label>
 
-                <div className='error'>{errors?.patronymic && <p>{errors?.patronymic?.message || 'Error'}</p>}</div>
+                {errors?.patronymic && <ErrorMessage field={errors.patronymic?.message || 'Error'} />}
                 <label htmlFor="#" className="form__label">
                     Patronymic
                     <input {...register('patronymic', {
                         required: 'Connot be empty',
                     })}
-                    className="form__input" type="text" name="patronymic"  placeholder='Enter your patronymic'/>
+                    className="form__input" type="text" name="patronymic"  placeholder='Enter your patronymic'
+                    autocomplete='additional-name'/>
                 </label>
 
-                <div className='error'>{errors?.phone && <p>{errors?.phone?.message || 'Error'}</p>}</div>
+                {errors?.phone && <ErrorMessage field={errors.phone?.message || 'Error'} />}
                 <label htmlFor="#" className="form__label">
                     Phone number
                     <input {...register('phone', {
@@ -121,10 +127,11 @@ function RegisterForm() {
                             message: 'Phone number too long'
                         }
                     })}
-                    className="form__input" type="number" name="phone"  placeholder='Enter your phone number'/>
+                    className="form__input" type="tel" name="phone"  placeholder='Enter your phone number'
+                    autocomplete='tel-national'/>
                 </label>
 
-                <div className='error'>{errors?.passs && <p>{errors?.passs?.message || 'Error'}</p>}</div>
+                {errors?.passs && <ErrorMessage field={errors.passs?.message || 'Error'} />}
                 <label htmlFor="#" className="form__label">
                     Password
                     <input {...register('passs', {
@@ -141,7 +148,7 @@ function RegisterForm() {
                     className="form__input form__input-pass" type="password" name="passs" id="passs" placeholder='Enter your Password'/>
                 </label>
 
-                <div className='error'>{errors?.cpass && <p>Must equals to password</p>}</div>
+                {errors?.cpass && <ErrorMessage field={errors.cpass?.message || 'Passwords fields are different'} />}
                 <label htmlFor="#" className="form__label">
                     Confirm Password
                     <input {...register('cpass', {
