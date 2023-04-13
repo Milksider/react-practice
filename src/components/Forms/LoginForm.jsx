@@ -1,9 +1,12 @@
 import '../styles/style.css';
+import React from 'react';
 import {useForm} from 'react-hook-form';
 import {Link} from 'react-router-dom';
 import Swal from 'sweetalert2'
 import ErrorMessage from '../Errors/InputError'
-import If from 'react'
+import Label from '../FormElements/Label'
+import Button from '../FormElements/Button'
+import Form from '../FormElements/Form'
 
 function LoginForm() {
 
@@ -53,13 +56,13 @@ function LoginForm() {
               You can   <Link className="form-wrapper__link" to="/register">Register here !</Link>
             </p>
 
-            <form onSubmit={handleSubmit(onSubmit)} 
+            <Form onSubmit={handleSubmit(onSubmit)} 
             action="#" className="form" >
 
                 
                 {errors?.email && <ErrorMessage field={errors.email?.message || 'Error'} />}
-                <label htmlFor="#" className="form__label">
-                    Email
+                <Label htmlFor="#" className="form__label">
+                    Email 
                     <input {...register('email', {
                         required: 'Connot be empty',
                         pattern: {
@@ -68,11 +71,11 @@ function LoginForm() {
                         }
                     })}
                     className="form__input form__input-email" type="email" name="email"  placeholder='Enter your email address'
-                    autocomplete='email'/>
-                </label>
+                    autoComplete='email'/>
+                </Label>
                 
                 {errors?.pass && <ErrorMessage field={errors.pass?.message || 'Error'} />}
-                <label htmlFor="#" className="form__label">
+                <Label htmlFor="#" className="form__label">
                     Password
                     <input {...register('pass', {
                         required: 'Connot be empty',
@@ -86,10 +89,10 @@ function LoginForm() {
                         }
                     })} 
                     className="form__input form__input-pass" type="password" name="pass"  placeholder='Enter your Password'
-                    autocomplete='current-password'/>
-                    </label>
-                <button disabled={!isValid} className="form__btn" type="submit">Login</button>
-            </form>
+                    autoComplete='current-password'/>
+                    </Label>
+                <Button disabled={!isValid}>Login</Button>
+            </Form>
             <div className="alt-actions">
                 <p className="alt-actions__text">
                     or continue with
