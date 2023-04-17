@@ -1,14 +1,16 @@
-import '../styles/style.css';
-import React from 'react';
-import {useForm} from 'react-hook-form';
-import {Link} from 'react-router-dom';
+import '../styles/style.css'
+import React from 'react'
+import {useForm} from 'react-hook-form'
+import {Link} from 'react-router-dom'
 import Swal from 'sweetalert2'
-import ErrorMessage from '../Errors/InputError'
-import Label from '../FormElements/Label'
 import Button from '../FormElements/Button'
 import Form from '../FormElements/Form'
+import EmailInput from '../Inputs/EmailInput'
+import PassInput from '../Inputs/PassInput'
+
 
 function LoginForm() {
+
 
     const {
         register,
@@ -57,42 +59,15 @@ function LoginForm() {
             </p>
 
             <Form onSubmit={handleSubmit(onSubmit)} 
-            action="#" className="form" >
+                  action="#" className="form" >
 
+                <EmailInput register={register} errors={errors}/>
                 
-                {errors?.email && <ErrorMessage field={errors.email?.message || 'Error'} />}
-                <Label htmlFor="#" className="form__label">
-                    Email 
-                    <input {...register('email', {
-                        required: 'Connot be empty',
-                        pattern: {
-                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                            message: 'Wrong email format'
-                        }
-                    })}
-                    className="form__input form__input-email" type="email" name="email"  placeholder='Enter your email address'
-                    autoComplete='email'/>
-                </Label>
-                
-                {errors?.pass && <ErrorMessage field={errors.pass?.message || 'Error'} />}
-                <Label htmlFor="#" className="form__label">
-                    Password
-                    <input {...register('pass', {
-                        required: 'Connot be empty',
-                        minLength: {
-                            value: 8,
-                            message: 'Password must contain at least 8 characters'
-                        },
-                        pattern: {
-                            value: /^.*(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$/,
-                            message: 'Password must contain A-Z and a-z and 0-9'
-                        }
-                    })} 
-                    className="form__input form__input-pass" type="password" name="pass"  placeholder='Enter your Password'
-                    autoComplete='current-password'/>
-                    </Label>
+                <PassInput register={register} errors={errors}/>
+
                 <Button disabled={!isValid}>Login</Button>
             </Form>
+
             <div className="alt-actions">
                 <p className="alt-actions__text">
                     or continue with

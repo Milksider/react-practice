@@ -6,9 +6,16 @@ import ErrorMessage from '../Errors/InputError'
 import Label from '../FormElements/Label'
 import Button from '../FormElements/Button'
 import Form from '../FormElements/Form'
+import NameInputs from '../Inputs/NameInputs';
+import EmailInput from '../Inputs/EmailInput';
+import PassInput from '../Inputs/PassInput';
+import PhoneInput from '../Inputs/PhoneInput';
+import CopyPassInput from '../Inputs/CopyPassInput';
 
 
 function RegisterForm() {
+
+    
 
     const {
         register,
@@ -68,99 +75,14 @@ function RegisterForm() {
             <Form onSubmit={handleSubmit(onSubmit)} 
             action="#" className="form">
 
-                {errors?.email && <ErrorMessage field={errors.email?.message || 'Error'} />}
-                <Label htmlFor="#" className="form__label">
-                    Email
-                    <input {...register('email', {
-                        required: 'Connot be empty',
-                        pattern: {
-                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                            message: 'Wrong email format'
-                        }
-                    })}
-                    className="form__input form__input-email" type="email" name="email"  placeholder='Enter your email address'
-                    autocomplete='email'/>
-                </Label>
+                <EmailInput register={register} errors={errors}/>
 
-                {errors?.firstName && <ErrorMessage field={errors.firstName?.message || 'Error'} />}
-                <Label htmlFor="#" className="form__label">
-                    Name
-                    <input {...register('firstName', {
-                        required: 'Connot be empty',
-                    })}
-                        className="form__input" type="text" name="firstName"  placeholder='Enter your name'
-                        autocomplete='given-name'/>
-                </Label>
+                <NameInputs register={register} errors={errors} />
 
-                {errors?.lastName && <ErrorMessage field={errors.lastName?.message || 'Error'} />}
-                <Label htmlFor="#" className="form__label">
-                    Last name
-                    <input {...register('lastName', {
-                        required: 'Connot be empty',
-                    })}
-                    className="form__input" type="text" name="lastName"  placeholder='Enter your last name'
-                    autocomplete='family-name'/>
-                </Label>
+                <PhoneInput register={register} errors={errors} />
 
-                {errors?.patronymic && <ErrorMessage field={errors.patronymic?.message || 'Error'} />}
-                <Label htmlFor="#" className="form__label">
-                    Patronymic
-                    <input {...register('patronymic', {
-                        required: 'Connot be empty',
-                    })}
-                    className="form__input" type="text" name="patronymic"  placeholder='Enter your patronymic'
-                    autocomplete='additional-name'/>
-                </Label>
-
-                {errors?.phone && <ErrorMessage field={errors.phone?.message || 'Error'} />}
-                <Label htmlFor="#" className="form__label">
-                    Phone number
-                    <input {...register('phone', {
-                        required: 'Connot be empty',
-                        pattern: {
-                            value: /^[7-8]/,
-                            message: 'Phone number must start with 7 or 8'
-                        },
-                        minLength: {
-                            value: 11,
-                            message: 'Phone number too short'
-                        },
-                        maxLength: {
-                            value: 11,
-                            message: 'Phone number too long'
-                        }
-                    })}
-                    className="form__input" type="tel" name="phone"  placeholder='Enter your phone number'
-                    autocomplete='tel-national'/>
-                </Label>
-
-                {errors?.passs && <ErrorMessage field={errors.passs?.message || 'Error'} />}
-                <Label htmlFor="#" className="form__label">
-                    Password
-                    <input {...register('passs', {
-                        required: 'Connot be empty',
-                        minLength: {
-                            value: 8,
-                            message: 'Password must contain at least 8 characters'
-                        },
-                        pattern: {
-                            value: /^.*(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$/,
-                            message: 'Password must contain A-Z and a-z and 0-9'
-                        }
-                    })} 
-                    className="form__input form__input-pass" type="password" name="passs" id="passs" placeholder='Enter your Password'/>
-                </Label>
-
-                {errors?.cpass && <ErrorMessage field={errors.cpass?.message || 'Passwords fields are different'} />}
-                <Label htmlFor="#" className="form__label">
-                    Confirm Password
-                    <input {...register('cpass', {
-                        required: true,
-                        validate: 
-                            value => value === getValues('passs')
-                    })} 
-                    className="form__input form__input-pass" type="password" name="cpass"  placeholder='Confirm your Password'/>
-                </Label>
+                <CopyPassInput register={register} errors={errors} getValues={getValues} />
+                
                 <Button disabled={!isValid}>Register</Button>
             </Form>
       </div>

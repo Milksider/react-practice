@@ -6,4 +6,4 @@ function InputError(props){
     )
 }
 
-export default InputError;
+export default InputError
