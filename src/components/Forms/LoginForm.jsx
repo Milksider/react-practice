@@ -1,15 +1,19 @@
 import '../styles/style.css'
 import React from 'react'
 import {useForm} from 'react-hook-form'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import Swal from 'sweetalert2'
 import Button from '../FormElements/Button'
 import Form from '../FormElements/Form'
 import EmailInput from '../Inputs/EmailInput'
 import PassInput from '../Inputs/PassInput'
+import { useAuth } from '../useAuth'
 
 
-function LoginForm() {
+function LoginForm(props) {
+    
+  const navigate = useNavigate()
+  const {setIsLoggedIn} = useAuth()
 
 
     const {
@@ -22,7 +26,7 @@ function LoginForm() {
         reset
     } = useForm({
         mode: 'onBlur'
-    });
+    })
 
     const onSubmit = async (data) => {
         const formData = new FormData()
@@ -41,12 +45,14 @@ function LoginForm() {
             Swal.fire('Error', res.message, 'error', 'ok')
         }else {
             console.log(res.accessToken)
-            console.log(res.refreshToken)
+            console.log(res.refreshToken) 
             localStorage.setItem('accessToken', res.accessToken)
             localStorage.setItem('refreshToken', res.refreshToken)
+            setIsLoggedIn(true)
+            navigate('/test', {replace: true})
         }
         reset();
-    };
+    }
 
     return(
         <div className="form-wrapper">
@@ -90,4 +96,4 @@ function LoginForm() {
         
 }
 
-export default LoginForm;
+export default LoginForm

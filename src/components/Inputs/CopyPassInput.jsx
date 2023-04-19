@@ -27,7 +27,7 @@ function CopyPassInput({register, errors, getValues}){
                 <input {...register('cpass', {
                     required: true,
                     validate: 
-                        value => value === getValues('passs')
+                        value => value === getValues('pass')
                 })} 
                 className="form__input form__input-pass" type="password" name="cpass"  placeholder='Confirm your Password'/>
             </Label>

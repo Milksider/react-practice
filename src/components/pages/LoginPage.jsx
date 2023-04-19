@@ -1,6 +1,6 @@
 import LoginForm from '../Forms/LoginForm';
 
-function LoginPage(){
+function LoginPage(props){
 return(
     <section class="forms">
     <div class="container">
@@ -12,7 +12,7 @@ return(
           </div>
 
             <div className="switcher">
-            <LoginForm/>
+            <LoginForm setIsLoggedIn={props.setIsLoggedIn}/>
             </div>
            
         </div>

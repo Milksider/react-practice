@@ -1,21 +1,20 @@
-import '../styles/style.css';
-import {useForm} from 'react-hook-form';
-import {Link} from 'react-router-dom';
+import '../styles/style.css'
+import {useForm} from 'react-hook-form'
+import {Link, useNavigate} from 'react-router-dom'
 import Swal from 'sweetalert2'
-import ErrorMessage from '../Errors/InputError'
-import Label from '../FormElements/Label'
 import Button from '../FormElements/Button'
 import Form from '../FormElements/Form'
-import NameInputs from '../Inputs/NameInputs';
-import EmailInput from '../Inputs/EmailInput';
-import PassInput from '../Inputs/PassInput';
-import PhoneInput from '../Inputs/PhoneInput';
-import CopyPassInput from '../Inputs/CopyPassInput';
+import NameInputs from '../Inputs/NameInputs'
+import EmailInput from '../Inputs/EmailInput'
+import PhoneInput from '../Inputs/PhoneInput'
+import CopyPassInput from '../Inputs/CopyPassInput'
+import { useAuth } from '../useAuth'
 
 
 function RegisterForm() {
 
-    
+    const navigate = useNavigate()
+    const {setIsLoggedIn} = useAuth()
 
     const {
         register,
@@ -55,11 +54,13 @@ function RegisterForm() {
             console.log(res.refreshToken)
             localStorage.setItem('accessToken', res.accessToken)
             localStorage.setItem('refreshToken', res.refreshToken)
+            setIsLoggedIn(true)
+            navigate('/test', {replace: true})
         }else{
             Swal.fire('Ошибка', 'error', 'ok')
         }
         reset()
-    };
+    }
 
 
     return(
@@ -82,7 +83,7 @@ function RegisterForm() {
                 <PhoneInput register={register} errors={errors} />
 
                 <CopyPassInput register={register} errors={errors} getValues={getValues} />
-                
+
                 <Button disabled={!isValid}>Register</Button>
             </Form>
       </div>
@@ -90,4 +91,4 @@ function RegisterForm() {
         
 }
 
-export default RegisterForm;
+export default RegisterForm
