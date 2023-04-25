@@ -49,7 +49,7 @@ function LoginForm(props) {
             localStorage.setItem('accessToken', res.accessToken)
             localStorage.setItem('refreshToken', res.refreshToken)
             setIsLoggedIn(true)
-            navigate('/test', {replace: true})
+            navigate('/main', {replace: true})
         }
         reset();
     }
