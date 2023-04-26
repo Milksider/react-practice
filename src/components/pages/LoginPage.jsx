@@ -1,6 +1,8 @@
-import LoginForm from '../Forms/LoginForm';
+import LoginForm from '../Forms/LoginForm'
+import { useAuth } from '../useAuth'
 
 function LoginPage(props){
+
 return(
     <section class="forms">
     <div class="container">
@@ -31,6 +33,6 @@ return(
     </div>
   </section>
 )
-};
+}
 
-export default LoginPage;
+export default LoginPage

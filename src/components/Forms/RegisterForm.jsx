@@ -14,7 +14,7 @@ import { useAuth } from '../useAuth'
 function RegisterForm() {
 
     const navigate = useNavigate()
-    const {setIsLoggedIn} = useAuth()
+    const {signin} = useAuth()
 
     const {
         register,
@@ -54,8 +54,7 @@ function RegisterForm() {
             console.log(res.refreshToken)
             localStorage.setItem('accessToken', res.accessToken)
             localStorage.setItem('refreshToken', res.refreshToken)
-            setIsLoggedIn(true)
-            navigate('/test', {replace: true})
+            signin(() => navigate('/main', {replace: true}))
         }else{
             Swal.fire('Ошибка', 'error', 'ok')
         }

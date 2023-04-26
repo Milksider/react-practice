@@ -5,7 +5,7 @@ import MainPage from './pages/MainPage'
 import {Routes, Route} from 'react-router-dom';
 import Layout from './Layout';
 import CheckAuth from './CheckAuth'
-// import CheckNoAuth from './CheckNoAuth';
+import CheckNoAuth from './CheckNoAuth';
 import { AuthProvider } from './AuthProvider';
 
 
@@ -17,11 +17,15 @@ function App() {
         <Routes>
             <Route path="/" element={<Layout/>}>
                 <Route path="/login" element={ 
-                    // <CheckNoAuth>
+                    <CheckNoAuth>
                         <LoginPage />
-                    // </CheckNoAuth> 
+                    </CheckNoAuth> 
                 }/>
-                <Route path="/register" element={ <RegisterPage/>} />
+                <Route path="/register" element={ 
+                    <CheckNoAuth>
+                        <RegisterPage/>
+                    </CheckNoAuth>
+                } />
                 <Route path="/main" element={
                     <CheckAuth>
                         <MainPage/>

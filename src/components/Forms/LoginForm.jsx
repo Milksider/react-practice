@@ -12,8 +12,8 @@ import { useAuth } from '../useAuth'
 
 function LoginForm(props) {
     
-  const navigate = useNavigate()
-  const {setIsLoggedIn} = useAuth()
+    const navigate = useNavigate()
+    const {signin} = useAuth()
 
 
     const {
@@ -48,8 +48,7 @@ function LoginForm(props) {
             console.log(res.refreshToken) 
             localStorage.setItem('accessToken', res.accessToken)
             localStorage.setItem('refreshToken', res.refreshToken)
-            setIsLoggedIn(true)
-            navigate('/main', {replace: true})
+            signin(() => navigate('/main', {replace: true}))
         }
         reset();
     }

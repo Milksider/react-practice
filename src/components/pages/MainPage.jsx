@@ -1,15 +1,13 @@
 import React from "react"
 import { useAuth } from "../useAuth"
 import { openMenu, closeMenu } from "../../script"
+import { useNavigate } from "react-router-dom"
 
 function MainPage(){
 
-    const {setIsLoggedIn} = useAuth()
+    const {signout} = useAuth()
+    const navigate = useNavigate()
 
-    function logOut(){
-        localStorage.clear()
-        return setIsLoggedIn(false)
-    }
     return (
         <>
         <section class="header">
@@ -27,7 +25,7 @@ function MainPage(){
                         <a href="#" class="burger-menu__link">ПРАЙС-ЛИСТ</a>
                         <a href="#" class="burger-menu__link">КОНТАКТЫ</a>
                     </div>
-                    <button class="burger-menu__logout" onClick={logOut}>
+                    <button class="burger-menu__logout" onClick={() => signout(() => navigate('/login', {replace: true}))}>
                         <img src="./images/logout.png" alt=""/>
                     </button>
                     <div class="burger-menu__social">
