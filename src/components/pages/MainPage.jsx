@@ -7,6 +7,7 @@ function MainPage(){
     const {setIsLoggedIn} = useAuth()
 
     function logOut(){
+        localStorage.clear()
         return setIsLoggedIn(false)
     }
     return (

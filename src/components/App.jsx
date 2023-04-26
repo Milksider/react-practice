@@ -5,6 +5,7 @@ import MainPage from './pages/MainPage'
 import {Routes, Route} from 'react-router-dom';
 import Layout from './Layout';
 import CheckAuth from './CheckAuth'
+// import CheckNoAuth from './CheckNoAuth';
 import { AuthProvider } from './AuthProvider';
 
 
@@ -15,7 +16,11 @@ function App() {
     <AuthProvider>
         <Routes>
             <Route path="/" element={<Layout/>}>
-                <Route path="/login" element={ <LoginPage />} />
+                <Route path="/login" element={ 
+                    // <CheckNoAuth>
+                        <LoginPage />
+                    // </CheckNoAuth> 
+                }/>
                 <Route path="/register" element={ <RegisterPage/>} />
                 <Route path="/main" element={
                     <CheckAuth>
