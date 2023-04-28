@@ -268,14 +268,25 @@ html{
     line-height: 60px;
     width: 520px;
 }
-.circle-left{
+.circle-left,
+.circle-mid{
     display: flex;
     align-items: center;
     position: relative;
 }
+.circle-mid{
+  justify-content: center;
+}
 .circle-left p{
     margin-left: 10px;
     position: absolute;
+}
+.circle-mid p{
+  position: absolute;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
 }
 .header__buttons{
     margin-top: 37px;
@@ -371,6 +382,229 @@ html{
     margin-left: 15px;
 }
 
+.main-container{
+  padding: 0 390px;
+}
+.about{
+  background-color: white;
+  padding-top: 120px;
+}
+.about__inner{
+  display: flex;
+}
+.about-picture{
+  max-width: 400px;
+  max-height: 600px;
+  width: 100%;
+  height: 100%;
+  margin-right: 70px;
+}
+.about__content{
+  width: 100%;
+}
+.title-left,
+.title-mid{
+  position: relative;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 60px;
+}
+.title-left::before{
+  content: ' ';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  background-color: #FFA501;
+}
+.about__text{
+  margin-top: 20px;
+  max-width: 570px;
+  width: 100%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+}
+.about__skills{
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 50px;
+  row-gap: 20px;
+  max-width: 570px;
+}
+.about__skills-item{
+  display: flex;
+  align-items: flex-start;
+}
+.about__skills-content{
+  margin-left: 20px;
+  max-width: 200px;
+  width: 100%;
+}
+.about__skills-title{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}
+.about__skills-text{
+  margin-top: 5px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+.expirience{
+  background-color: white;
+  padding-top: 120px;
+}
+.title-mid{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 60px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 25px;
+}
+.title-mid::before{
+  content: ' ';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: #FFA501;
+  margin: 0 auto;
+  bottom: 0;
+}
+.expirience__utility{
+  margin-top: 85px;
+  display: flex;
+  justify-content: space-between;
+}
+.utility-item{
+  display: flex;
+}
+.utility-item__aside{
+  margin-top: 7px;
+}
+.utility-item__content-item{
+  margin-top: 45px;
+}
+.utility-item__title{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+}
+.content-item__title{
+  display: flex;
+  margin-bottom: 12px;
+}
+.pair{
+  margin-left: 20px;
+}
+.content-item__text{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  max-width: 375px;
+  height: 77px;
+}
+.tools{
+  padding-top: 120px;
+  background-color: white;
+}
+.tools__inner{
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 13px;
+  margin-top: 85px;
+  padding-bottom: 120px;
+}
+.tools__item{
+  border: 1px solid black;
+  padding: 30px;
+  max-width: 270px
+}
+.tools__item-picture{
+  display: flex;
+  align-items: center;
+  height: 65px;
+}
+.tools__item-title{
+  margin-top: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}
+.tools__item-text{
+  margin-top: 15px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+.percents{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 36px;
+  row-gap: 30px;
+}
+.percents__item-title .circle-left{
+  width: 100%;
+}
+.percents__item{
+  width: 350px;
+}
+.percents__item-title{
+  display: flex;
+  justify-content: space-between;
+}
+.percents__line{
+  margin-top: 20px;
+  position: relative;
+}
+.grey-line{
+  width: 350px;
+  height: 13px;
+  border-radius: 4px;
+  background-color: #E8E4DE;
+  display: flex;
+}
+.yellow-line{
+  max-width: 350px;
+  height: 13px;
+  border-radius: 4px;
+  background-color: #FFA501;
+}
+.portfolio{
+  background-color: white;
+  padding-top: 120px;
+}
+.portfolio__list{
+  padding-top: 85px;
+  display: grid;
+  grid-template-columns: 280px 280px 280px 280px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 5px;
+}
+.two-columns{
+  grid-row: span 2;
+}
+.two-rows{
+  grid-column: span 2;
+}
+.price{
+  background-color: white;
+  padding-top: 120px;
+}
 
   @media(max-width: 1000px){
     .container{

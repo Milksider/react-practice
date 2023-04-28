@@ -40,9 +40,7 @@ function MainPage(){
                         </a>
                     </div>
                 </div>
-                <div class="shroud">
-    
-                </div>
+                <div class="shroud"></div>
             </div>
         </div>
         <div class="header__burger">
@@ -89,6 +87,373 @@ function MainPage(){
             </div>
         </div>
        </div>
+    </section>
+    <section className="about">
+        <div className="main-container">
+            <div className="about__inner">
+            <div className="about-picture">
+                <img className="about-picture__img" src="./images/me.jpg" alt="" />
+            </div>
+            <div className="about__content">
+                <div className="circle-left">
+                    <img src="./images/Circle.svg" alt=""/>
+                    <p>Про меня</p>
+                </div>
+                <h1 className="title-left">Меня зовут Тайлер Дерден</h1>
+                <p className="about__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                </p>
+                <div className="about__skills">
+                    <div className="about__skills-item">
+                        <img src="./images/web-development.svg" alt="" className="about__skills-img" />
+                        <div className="about__skills-content">
+                            <h5 className="about__skills-title">
+                            Web-разработка
+                            </h5>
+                            <p className="about__skills-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="about__skills-item">
+                        <img src="./images/web-development.svg" alt="" className="about__skills-img" />
+                        <div className="about__skills-content">
+                            <h5 className="about__skills-title">
+                            Разработка приложений
+                            </h5>
+                            <p className="about__skills-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="about__skills-item">
+                        <img src="./images/web-development.svg" alt="" className="about__skills-img" />
+                        <div className="about__skills-content">
+                            <h5 className="about__skills-title">
+                            UI/UX Design
+                            </h5>
+                            <p className="about__skills-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <section className="expirience">
+        <div className="main-container">
+            <div className="expirience__inner">
+                <div className="circle-mid">
+                    <img src="./images/Circle.svg" alt=""/>
+                    <p>Опыт</p>
+                </div>
+                <h1 className="title-mid">
+                    Чем я буду полезна 
+                </h1>
+                <div className="expirience__utility">
+                    <div className="utility-item">
+                        <div className="utility-item__aside">
+                            <img src="./images/aside.svg" alt="" className="aside-img" />
+                        </div>
+                        <div className="utility-item__content">
+                            <h2 className="utility-item__title">
+                                Образование
+                            </h2>
+                            <div className="utility-item__content-item">
+                                <div className="content-item__title">
+                                    <img src="./images/web-development.svg" alt="" className="about__skills-img" />
+                                    <div className="pair">
+                                        <h3>МГТУ им. Н. Э. Баумана</h3>
+                                        <p>Диплом магистра | Москва (2014-2020)</p>
+                                    </div>
+                                </div>
+                                <p className="content-item__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo. 
+                                </p>
+                            </div>
+                            <div className="utility-item__content-item">
+                                <div className="content-item__title">
+                                    <img src="./images/web-development.svg" alt="" className="about__skills-img" />
+                                    <div className="pair">
+                                        <h3>Udemy</h3>
+                                        <p>Курсы по Web-разработке </p>
+                                    </div>
+                                </div>
+                                <p className="content-item__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="utility-item">
+                        <div className="utility-item__aside">
+                            <img src="./images/aside.svg" alt="" className="aside-img" />
+                        </div>
+                        <div className="utility-item__content">
+                            <h2 className="utility-item__title">
+                                Опыт работы
+                            </h2>
+                            <div className="utility-item__content-item">
+                                <div className="content-item__title">
+                                    <img src="./images/web-development.svg" alt="" className="about__skills-img" />
+                                    <div className="pair">
+                                        <h3>Front-End Developer</h3>
+                                        <p>EPAM | Москва (2018-2019)</p>
+                                    </div>
+                                </div>
+                                <p className="content-item__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo. 
+                                </p>
+                            </div>
+                            <div className="utility-item__content-item">
+                                <div className="content-item__title">
+                                    <img src="./images/web-development.svg" alt="" className="about__skills-img" />
+                                    <div className="pair">
+                                        <h3>UI/UX Designer</h3>
+                                        <p>Squad Team | Москва (2018)</p>
+                                    </div>
+                                </div>
+                                <p className="content-item__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section className="tools">
+        <div className="main-container">
+                <div className="circle-mid">
+                    <img src="./images/Circle.svg" alt=""/>
+                    <p>Навыки</p>
+                </div>
+                <h1 className="title-mid">
+                    Что я использую в работе
+                </h1>
+            <div className="tools__inner">
+                <div className="tools__item">
+                    <div className="tools__item-picture">
+                        <img src="./images/html5.svg" alt="" className="tools__item-img" />
+                    </div>
+                    <h3 className="tools__item-title">
+                        HTML5
+                    </h3>
+                    <p className="tools__item-text">
+                        Именно он создает каркас вашего сайта или приложения, а пятая версия позволит мне создавать более SEO-оптимизированную структуру вашего продукта
+                    </p>
+                </div>
+                <div className="tools__item">
+                     <div className="tools__item-picture">
+                        <img src="./images/css3.svg" alt="" className="tools__item-img" />
+                    </div>
+                    <h3 className="tools__item-title">
+                        CSS5
+                    </h3>
+                    <p className="tools__item-text">
+                        Этот язык стилей позволяет мне создавать абсолютно любой внешний вид вашего сайта или приложения. Все ограничивается только вашей фантазией!
+                    </p>
+                </div>
+                <div className="tools__item">
+                    <div className="tools__item-picture">
+                        <img src="./images/JS.svg" alt="" className="tools__item-img" />
+                    </div>
+                    <h3 className="tools__item-title">
+                        Java Script
+                    </h3>
+                    <p className="tools__item-text">
+                        Этот язык программирования позволяет оживить все что угодно: слайдеры, окна, подсказки, вкладки, получение данных от сервера и многое другое
+                    </p>
+                </div>
+                <div className="tools__item">
+                    <div className="tools__item-picture">
+                        <img src="./images/Jquery.svg" alt="" className="tools__item-img" />
+                    </div>
+                    <h3 className="tools__item-title">
+                        Jquery
+                    </h3>
+                    <p className="tools__item-text">
+                        Библиотека Jquery позволит ускорить разработку. Без необходимости интегрировать в проект мы её не будем, но навык работы с ней присутствует
+                    </p>
+                </div>
+                <div className="tools__item">
+                    <div className="tools__item-picture">
+                        <img src="./images/React.svg" alt="" className="tools__item-img" />
+                    </div>
+                    <h3 className="tools__item-title">
+                        React
+                    </h3>
+                    <p className="tools__item-text">
+                        Эта библиотека позволяет создавать web-приложения. Мы можем создать максимально интерактивный продукт именно под ваши цели
+                    </p>
+                </div>
+                <div className="tools__item">
+                    <div className="tools__item-picture">
+                        <img src="./images/Node.js.svg" alt="" className="tools__item-img" />
+                    </div>
+                    <h3 className="tools__item-title">
+                        Node.js
+                    </h3>
+                    <p className="tools__item-text">
+                        Эта платформа позволяет создавать бэкенд для вашего продукта - “мозги”, которые будут выполнять действия, которые пользователь не видит
+                    </p>
+                </div>
+                <div className="tools__item">
+                    <div className="tools__item-picture">
+                        <img src="./images/Mongo.db.svg" alt="" className="tools__item-img" />
+                    </div>
+                    <h3 className="tools__item-title">
+                        Mongo.db
+                    </h3>
+                    <p className="tools__item-text">
+                        Это нереляционная база данных, которая будет хранить данные вашего сайта или приложения
+                    </p>
+                </div>
+            </div>
+            <div className="percents">
+                <div className="percents__item">
+                    <div className="percents__item-title">
+                        <div className="circle-left">
+                            <img src="./images/Circle.svg" alt=""/>
+                            <p>Создание сайтов</p>
+                        </div>
+                        <span>100%</span>
+                    </div>
+                    <div className="percents__line">
+                        <span className="grey-line">
+                        <span style={{width: 'calc(100% - 0%)'}} className="yellow-line">
+                        </span>
+                        </span>
+                    </div>
+                </div>
+                <div className="percents__item">
+                    <div className="percents__item-title">
+                        <div className="circle-left">
+                            <img src="./images/Circle.svg" alt=""/>
+                            <p>Создание приложений</p>
+                        </div>
+                        <span>85%</span>
+                    </div>
+                    <div className="percents__line">
+                        <span className="grey-line">
+                        <span style={{width: 'calc(100% - 15%)'}} className="yellow-line">
+                        </span>
+                        </span>
+                    </div>
+                </div>
+                <div className="percents__item">
+                    <div className="percents__item-title">
+                        <div className="circle-left">
+                            <img src="./images/Circle.svg" alt=""/>
+                            <p>Работа с данными</p>
+                        </div>
+                        <span>90%</span>
+                    </div>
+                    <div className="percents__line">
+                        <span className="grey-line">
+                        <span style={{width: 'calc(100% - 10%)'}} className="yellow-line">
+                        </span>
+                        </span>
+                    </div>
+                </div>
+                <div className="percents__item">
+                    <div className="percents__item-title">
+                        <div className="circle-left">
+                            <img src="./images/Circle.svg" alt=""/>
+                            <p>Креативность</p>
+                        </div>
+                        <span>75%</span>
+                    </div>
+                    <div className="percents__line">
+                        <span className="grey-line">
+                        <span style={{width: 'calc(100% - 25%)'}} className="yellow-line">
+                        </span>
+                        </span>
+                    </div>
+                </div>
+                <div className="percents__item">
+                    <div className="percents__item-title">
+                        <div className="circle-left">
+                            <img src="./images/Circle.svg" alt=""/>
+                            <p>Создание дизайна</p>
+                        </div>
+                        <span>90%</span>
+                    </div>
+                    <div className="percents__line">
+                        <span className="grey-line">
+                        <span style={{width: 'calc(100% - 10%)'}} className="yellow-line">
+                        </span>
+                        </span>
+                    </div>
+                </div>
+                <div className="percents__item">
+                    <div className="percents__item-title">
+                        <div className="circle-left">
+                            <img src="./images/Circle.svg" alt=""/>
+                            <p>Soft skills</p>
+                        </div>
+                        <span>95%</span>
+                    </div>
+                    <div className="percents__line">
+                        <span className="grey-line">
+                        <span style={{width: 'calc(100% - 5%)'}} className="yellow-line">
+                        </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section className="portfolio">
+        <div className="main-container">
+            <div className="circle-mid">
+                    <img src="./images/Circle.svg" alt=""/>
+                    <p>Портфолио</p>
+            </div>
+                <h1 className="title-mid">
+                    Мои работы
+                </h1>
+            <div className="portfolio__list">
+                <div className="portfolio__item">
+                    <a href="#" className="portfolio__link">
+                        <img src="./images/1.jpg" alt="" className="portfolio__img" />
+                    </a>
+                </div>
+                <div className="portfolio__item">
+                    <a href="#" className="portfolio__link">
+                        <img src="./images/2.jpg" alt="" className="portfolio__img" />
+                    </a>
+                </div>
+                <div className="portfolio__item">
+                    <a href="#" className="portfolio__link">
+                        <img src="./images/3.jpg" alt="" className="portfolio__img" />
+                    </a>
+                </div>
+                <div className="portfolio__item two-columns">
+                    <a href="#" className="portfolio__link">
+                        <img src="./images/4.jpg" alt="" className="portfolio__img" />
+                    </a>
+                </div>
+                <div className="portfolio__item">
+                    <a href="#" className="portfolio__link">
+                        <img src="./images/5.jpg" alt="" className="portfolio__img" />
+                    </a>
+                </div>
+                <div className="portfolio__item two-rows">
+                    <a href="#" className="portfolio__link">
+                        <img src="./images/6.jpg" alt="" className="portfolio__img" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section className="price">
+        <div className="main-container">
+            
+        </div>
     </section>
         </>
     )
