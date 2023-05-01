@@ -27,9 +27,9 @@ function App() {
                     </CheckNoAuth>
                 } />
                 <Route path="/main" element={
-                    // <CheckAuth>
+                    <CheckAuth>
                         <MainPage/>
-                // </CheckAuth> 
+                    </CheckAuth> 
                 } />
             </Route>
         </Routes>

@@ -1,5 +1,4 @@
 import LoginForm from '../Forms/LoginForm'
-import { useAuth } from '../useAuth'
 
 function LoginPage(props){
 
