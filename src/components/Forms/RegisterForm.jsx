@@ -1,10 +1,20 @@
-import '../styles/style.css';
-import {useForm} from 'react-hook-form';
-import {Link} from 'react-router-dom';
+import './Forms.css'
+import {useForm} from 'react-hook-form'
+import {Link, useNavigate} from 'react-router-dom'
 import Swal from 'sweetalert2'
+import Button from '../FormElements/Button/Button'
+import Form from '../FormElements/Form'
+import NameInputs from '../Inputs/NameInputs'
+import EmailInput from '../Inputs/EmailInput'
+import PhoneInput from '../Inputs/PhoneInput'
+import CopyPassInput from '../Inputs/CopyPassInput'
+import { useAuth } from '../useAuth'
 
 
 function RegisterForm() {
+
+    const navigate = useNavigate()
+    const {signin} = useAuth()
 
     const {
         register,
@@ -44,11 +54,12 @@ function RegisterForm() {
             console.log(res.refreshToken)
             localStorage.setItem('accessToken', res.accessToken)
             localStorage.setItem('refreshToken', res.refreshToken)
+            signin(() => navigate('/main', {replace: true}))
         }else{
             Swal.fire('Ошибка', 'error', 'ok')
         }
         reset()
-    };
+    }
 
 
     return(
@@ -61,101 +72,22 @@ function RegisterForm() {
               You can   <Link className="form-wrapper__link" to="/login">Login here !</Link>
             </p>
 
-            <form onSubmit={handleSubmit(onSubmit)} 
+            <Form onSubmit={handleSubmit(onSubmit)} 
             action="#" className="form">
-                <div className='error'>{errors?.email && <p>{errors?.email?.message || 'Error'}</p>}</div>
-                <label htmlFor="#" className="form__label">
-                    Email
-                    <input {...register('email', {
-                        required: 'Connot be empty',
-                        pattern: {
-                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                            message: 'Wrong email format'
-                        }
-                    })}
-                    className="form__input form__input-email" type="email" name="email"  placeholder='Enter your email address'/>
-                </label>
 
-                <div className='error'>{errors?.firstName && <p>{errors?.firstName?.message || 'Error'}</p>}</div>
-                <label htmlFor="#" className="form__label">
-                    Name
-                    <input {...register('firstName', {
-                        required: 'Connot be empty',
-                    })}
-                        className="form__input" type="text" name="firstName"  placeholder='Enter your name'/>
-                </label>
+                <EmailInput register={register} errors={errors}/>
 
-                <div className='error'>{errors?.lastName && <p>{errors?.lastName?.message || 'Error'}</p>}</div>
-                <label htmlFor="#" className="form__label">
-                    Last name
-                    <input {...register('lastName', {
-                        required: 'Connot be empty',
-                    })}
-                    className="form__input" type="text" name="lastName"  placeholder='Enter your last name'/>
-                </label>
+                <NameInputs register={register} errors={errors} />
 
-                <div className='error'>{errors?.patronymic && <p>{errors?.patronymic?.message || 'Error'}</p>}</div>
-                <label htmlFor="#" className="form__label">
-                    Patronymic
-                    <input {...register('patronymic', {
-                        required: 'Connot be empty',
-                    })}
-                    className="form__input" type="text" name="patronymic"  placeholder='Enter your patronymic'/>
-                </label>
+                <PhoneInput register={register} errors={errors} />
 
-                <div className='error'>{errors?.phone && <p>{errors?.phone?.message || 'Error'}</p>}</div>
-                <label htmlFor="#" className="form__label">
-                    Phone number
-                    <input {...register('phone', {
-                        required: 'Connot be empty',
-                        pattern: {
-                            value: /^[7-8]/,
-                            message: 'Phone number must start with 7 or 8'
-                        },
-                        minLength: {
-                            value: 11,
-                            message: 'Phone number too short'
-                        },
-                        maxLength: {
-                            value: 11,
-                            message: 'Phone number too long'
-                        }
-                    })}
-                    className="form__input" type="number" name="phone"  placeholder='Enter your phone number'/>
-                </label>
+                <CopyPassInput register={register} errors={errors} getValues={getValues} />
 
-                <div className='error'>{errors?.passs && <p>{errors?.passs?.message || 'Error'}</p>}</div>
-                <label htmlFor="#" className="form__label">
-                    Password
-                    <input {...register('passs', {
-                        required: 'Connot be empty',
-                        minLength: {
-                            value: 8,
-                            message: 'Password must contain at least 8 characters'
-                        },
-                        pattern: {
-                            value: /^.*(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$/,
-                            message: 'Password must contain A-Z and a-z and 0-9'
-                        }
-                    })} 
-                    className="form__input form__input-pass" type="password" name="passs" id="passs" placeholder='Enter your Password'/>
-                </label>
-
-                <div className='error'>{errors?.cpass && <p>Must equals to password</p>}</div>
-                <label htmlFor="#" className="form__label">
-                    Confirm Password
-                    <input {...register('cpass', {
-                        required: true,
-                        validate: 
-                            value => value === getValues('passs')
-                    })} 
-                    className="form__input form__input-pass" type="password" name="cpass"  placeholder='Confirm your Password'/>
-                </label>
-                <button disabled={!isValid}  className="form__btn" type="submit">Register</button>
-            </form>
+                <Button disabled={!isValid}>Register</Button>
+            </Form>
       </div>
     )
         
 }
 
-export default RegisterForm;
+export default RegisterForm

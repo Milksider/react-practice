@@ -1,9 +1,20 @@
-import '../styles/style.css';
-import {useForm} from 'react-hook-form';
-import {Link} from 'react-router-dom';
+import './Forms.css'
+import React from 'react'
+import {useForm} from 'react-hook-form'
+import {Link, useNavigate} from 'react-router-dom'
 import Swal from 'sweetalert2'
+import Button from '../FormElements/Button/Button.jsx'
+import Form from '../FormElements/Form'
+import EmailInput from '../Inputs/EmailInput'
+import PassInput from '../Inputs/PassInput'
+import { useAuth } from '../useAuth'
 
-function LoginForm() {
+
+function LoginForm(props) {
+    
+    const navigate = useNavigate()
+    const {signin} = useAuth()
+
 
     const {
         register,
@@ -15,7 +26,7 @@ function LoginForm() {
         reset
     } = useForm({
         mode: 'onBlur'
-    });
+    })
 
     const onSubmit = async (data) => {
         const formData = new FormData()
@@ -34,12 +45,13 @@ function LoginForm() {
             Swal.fire('Error', res.message, 'error', 'ok')
         }else {
             console.log(res.accessToken)
-            console.log(res.refreshToken)
+            console.log(res.refreshToken) 
             localStorage.setItem('accessToken', res.accessToken)
             localStorage.setItem('refreshToken', res.refreshToken)
+            signin(() => navigate('/main', {replace: true}))
         }
         reset();
-    };
+    }
 
     return(
         <div className="form-wrapper">
@@ -51,40 +63,16 @@ function LoginForm() {
               You can   <Link className="form-wrapper__link" to="/register">Register here !</Link>
             </p>
 
-            <form onSubmit={handleSubmit(onSubmit)} 
-            action="#" className="form" >
+            <Form onSubmit={handleSubmit(onSubmit)} 
+                  action="#" className="form" >
 
-                <div className='error'>{errors?.email && <p>{errors?.email?.message || 'Error'}</p>}</div>
-                <label htmlFor="#" className="form__label">
-                    Email
-                    <input {...register('email', {
-                        required: 'Connot be empty',
-                        pattern: {
-                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                            message: 'Wrong email format'
-                        }
-                    })}
-                    className="form__input form__input-email" type="email" name="email"  placeholder='Enter your email address'/>
-                </label>
+                <EmailInput register={register} errors={errors}/>
                 
-                <div className='error'>{errors?.pass && <p>{errors?.pass?.message || 'Error'}</p>}</div>
-                <label htmlFor="#" className="form__label">
-                    Password
-                    <input {...register('pass', {
-                        required: 'Connot be empty',
-                        minLength: {
-                            value: 8,
-                            message: 'Password must contain at least 8 characters'
-                        },
-                        pattern: {
-                            value: /^.*(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$/,
-                            message: 'Password must contain A-Z and a-z and 0-9'
-                        }
-                    })} 
-                    className="form__input form__input-pass" type="password" name="pass"  placeholder='Enter your Password'/>
-                    </label>
-                <button disabled={!isValid} className="form__btn" type="submit">Login</button>
-            </form>
+                <PassInput register={register} errors={errors}/>
+
+                <Button disabled={!isValid}>Login</Button>
+            </Form>
+
             <div className="alt-actions">
                 <p className="alt-actions__text">
                     or continue with
@@ -107,4 +95,4 @@ function LoginForm() {
         
 }
 
-export default LoginForm;
+export default LoginForm

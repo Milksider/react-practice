@@ -1,0 +1,33 @@
+.form__input{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #999999;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000842;
+    padding-left: 27px;
+    background-image: url('../../../public/icons/user.svg');
+    background-repeat: no-repeat;
+    background-position-y: 4px;
+  }
+  .form__input::placeholder{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000842;
+  }
+  .form__input-email{
+    background-image: url('../../../public/icons/message.svg');
+    background-repeat: no-repeat;
+    background-position-y: 4px;
+  }
+  .form__input-pass{
+    background-image: url('../../../public/icons/lock.svg');
+    background-repeat: no-repeat; 
+    background-position-y: 2px;
+  }

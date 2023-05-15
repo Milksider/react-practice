@@ -1,7 +1,5 @@
-import RegisterForm from '../Forms/RegisterForm';
-import {Routes, Route, Link} from 'react-router-dom';
-
-import loginPage from '../pages/LoginPage';
+import RegisterForm from '../Forms/RegisterForm'
+import './Pages.css'
 
 function RegisterPage(){
 
@@ -33,9 +31,6 @@ function RegisterPage(){
             </div>
           </div>
         </div>
-        <Routes>
-          <Route path="/login" element={<loginPage/>} />
-        </Routes>
       </section>
     )
     };

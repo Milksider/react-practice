@@ -1,0 +1,18 @@
+.form__btn{
+    border: none;
+    background-color: #0C21C1;
+    max-width: 430px;
+    width: 100%;
+    border-radius: 32px;
+    padding: 14px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 26px;
+    color: white;
+    margin-top: 45px;
+    cursor: pointer;
+  }
+  .form__btn:disabled{
+    background-color: #c1c3d4;
+  }
