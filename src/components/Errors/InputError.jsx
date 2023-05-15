@@ -1,3 +1,4 @@
+import './Errors.css'
 
 function InputError(props){
 

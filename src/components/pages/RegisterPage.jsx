@@ -1,4 +1,5 @@
-import RegisterForm from '../Forms/RegisterForm';
+import RegisterForm from '../Forms/RegisterForm'
+import './Pages.css'
 
 function RegisterPage(){
 

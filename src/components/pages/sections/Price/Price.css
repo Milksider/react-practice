@@ -1,0 +1,39 @@
+.price{
+  background-color: white;
+  padding-top: 120px;
+}
+.price__content{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.price__item{
+  display: flex;
+  justify-content: flex-start;
+  width: 366px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+.price__item + .price__item{
+  margin-top: 15px;
+}
+.price__item-link{
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+  width: 380px;
+}
+.price__item-img{
+  width: 20px;
+  height: 20px;
+}
+.price__item-title{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}

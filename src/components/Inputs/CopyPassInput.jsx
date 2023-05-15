@@ -1,12 +1,13 @@
 import { passPattern } from "../Regexp"
 import ErrorMessage from "../Errors/InputError"
-import Label from "../FormElements/Label"
+import Label from "../FormElements/Label/Label"
+import './Inputs.css'
 
 function CopyPassInput({register, errors, getValues}){
     return(
         <>
             {errors?.pass && <ErrorMessage field={errors.pass?.message || 'Error'} />}
-            <Label htmlFor="#" className="form__label">
+            <Label>
                 <input {...register('pass', {
                     required: 'Connot be empty',
                     minLength: {
@@ -22,7 +23,7 @@ function CopyPassInput({register, errors, getValues}){
                 autoComplete='current-password'/>
             </Label>
             {errors?.cpass && <ErrorMessage field={errors.cpass?.message || 'Passwords fields are different'} />}
-            <Label htmlFor="#" className="form__label">
+            <Label>
                 Confirm Password
                 <input {...register('cpass', {
                     required: true,

@@ -1,8 +1,9 @@
+import './Label.css'
 
 function Label(props){
 
     return (
-        <label  {...props}>
+        <label  className='form__label' {...props}>
             {props.children}
         </label>
     )

@@ -1,13 +1,14 @@
 import {mailPattern} from '../Regexp'
-import ErrorMessage from "../Errors/InputError";
-import Label from "../FormElements/Label";
+import ErrorMessage from "../Errors/InputError"
+import Label from "../FormElements/Label/Label"
+import './Inputs.css'
 
 
 function EmailInput({register, errors}){
     return (
         <>
          {errors?.email && <ErrorMessage field={errors.email?.message || 'Error'} />}
-         <Label htmlFor="#" className="form__label">
+         <Label>
             Email
             <input {...register('email', {
                 required: 'Connot be empty',

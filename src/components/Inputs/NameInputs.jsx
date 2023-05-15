@@ -1,11 +1,12 @@
-import ErrorMessage from "../Errors/InputError";
-import Label from "../FormElements/Label";
+import ErrorMessage from "../Errors/InputError"
+import Label from "../FormElements/Label/Label"
+import './Inputs.css'
 
 function NameInputs({register, errors}){
     return(
         <>
                 {errors?.firstName && <ErrorMessage field={errors.firstName?.message || 'Error'} />}
-                <Label htmlFor="#" className="form__label">
+                <Label>
                     Name
                     <input {...register('firstName', {
                         required: 'Connot be empty',
@@ -15,7 +16,7 @@ function NameInputs({register, errors}){
                 </Label>
 
                 {errors?.lastName && <ErrorMessage field={errors.lastName?.message || 'Error'} />}
-                <Label htmlFor="#" className="form__label">
+                <Label>
                     Last name
                     <input {...register('lastName', {
                         required: 'Connot be empty',
@@ -25,7 +26,7 @@ function NameInputs({register, errors}){
                 </Label>
 
                 {errors?.patronymic && <ErrorMessage field={errors.patronymic?.message || 'Error'} />}
-                <Label htmlFor="#" className="form__label">
+                <Label>
                     Patronymic
                     <input {...register('patronymic', {
                         required: 'Connot be empty',

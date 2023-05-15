@@ -1,12 +1,13 @@
 import { phonePattern } from "../Regexp"
 import ErrorMessage from "../Errors/InputError"
-import Label from "../FormElements/Label"
+import Label from "../FormElements/Label/Label"
+import './Inputs.css'
 
 function PhoneInput({register, errors}){
     return(
         <>
             {errors?.phone && <ErrorMessage field={errors.phone?.message || 'Error'} />}
-            <Label htmlFor="#" className="form__label">
+            <Label>
                 Phone number
                 <input {...register('phone', {
                     required: 'Connot be empty',

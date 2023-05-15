@@ -1,0 +1,17 @@
+.portfolio{
+  background-color: white;
+  padding-top: 120px;
+}
+.portfolio__list{
+  padding-top: 85px;
+  display: grid;
+  grid-template-columns: 280px 280px 280px 280px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 5px;
+}
+.two-columns{
+  grid-row: span 2;
+}
+.two-rows{
+  grid-column: span 2;
+}

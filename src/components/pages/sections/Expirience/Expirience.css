@@ -1,0 +1,39 @@
+.expirience{
+  background-color: white;
+  padding-top: 120px;
+}
+.expirience__utility{
+  margin-top: 85px;
+  display: flex;
+  justify-content: space-between;
+}
+.utility-item{
+  display: flex;
+}
+.utility-item__aside{
+  margin-top: 7px;
+}
+.utility-item__content-item{
+  margin-top: 45px;
+}
+.utility-item__title{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+}
+.content-item__title{
+  display: flex;
+  margin-bottom: 12px;
+}
+.pair{
+  margin-left: 20px;
+}
+.content-item__text{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  max-width: 375px;
+  height: 77px;
+}
